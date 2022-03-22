@@ -33,6 +33,7 @@ int main()
 	if (test_string = check_string(line1, line2) == false)
 	{
 		cout << "ERROR_FILE -> INCORRECT_SYMBOLS" << endl;
+		system("pause");
 		return 1;
 	}
 
