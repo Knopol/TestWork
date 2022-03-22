@@ -4,9 +4,6 @@ using namespace std;
 
 bool check_string(string line1, string line2)
 {
-	bool quote1 = false;
-	bool quote2 = false;
-	bool comma = false;
 	bool follow = false;
 	bool rule = true;
 	bool facts = false;
