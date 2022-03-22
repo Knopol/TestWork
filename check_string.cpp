@@ -13,6 +13,18 @@ bool check_string(string line1, string line2)
 		{
 			return false;
 		}
+		if ((i == 0) && (line2[i] != '"'))
+		{
+			return false;
+		}
+		if (((line1[i] == '"') && (i != 0) && (line1[i + 1] != '\0') && (((int)line1[i - 1] <= 90) && ((int)line1[i - 1] >= 65))) && ((line1[i + 1] != ',') || (line1[i + 2] != '"') || (((int)line1[i + 3] > 90) || ((int)line1[i + 3] < 65))))
+		{
+			return false;
+		}
+		if ((line1[i + 1] == '\0') && (line1[i] != '"'))
+		{
+			return false;
+		}
 	}
 	for (int i = 0; line2[i] != '\0'; i++)
 	{
@@ -77,6 +89,11 @@ bool check_string(string line1, string line2)
 		}
 
 		if ((((int)line2[i] > 90) || ((int)line2[i] < 65)) && ((int)line2[i] != 95) && ((int)line2[i] != 34) && ((int)line2[i] != 44) && ((int)line2[i] != 124) && ((int)line2[i] != 45) && ((int)line2[i] != 62))
+		{
+			return false;
+		}
+
+		if ((line2[i + 1] == '\0') && (line2[i] != '"'))
 		{
 			return false;
 		}
